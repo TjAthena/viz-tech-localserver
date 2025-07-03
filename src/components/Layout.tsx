@@ -40,7 +40,6 @@ const Layout = ({ children, userType, currentPage }: LayoutProps) => {
           { name: 'User Management', icon: Users, href: '/admin-users' },
           { name: 'Billing & Plans', icon: CreditCard, href: '/admin-billing' },
           { name: 'Audit Logs', icon: FileText, href: '/admin-logs' },
-          { name: 'Settings', icon: Settings, href: '/admin-settings' },
         ];
       case 'core':
         return [
