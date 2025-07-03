@@ -11,6 +11,8 @@ import AdminUserManagement from "./pages/AdminUserManagement";
 import AdminBilling from "./pages/AdminBilling";
 import AdminAuditLogs from "./pages/AdminAuditLogs";
 import CoreDashboard from "./pages/CoreDashboard";
+import CoreClients from "./pages/CoreClients";
+import CoreReports from "./pages/CoreReports";
 import CoreProfile from "./pages/CoreProfile";
 import ClientDashboard from "./pages/ClientDashboard";
 import ClientReport from "./pages/ClientReport";
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/admin-billing" element={<AdminBilling />} />
           <Route path="/admin-logs" element={<AdminAuditLogs />} />
           <Route path="/core-dashboard" element={<CoreDashboard />} />
+          <Route path="/core-clients" element={<CoreClients />} />
+          <Route path="/core-reports" element={<CoreReports />} />
           <Route path="/core-profile" element={<CoreProfile />} />
           <Route path="/client-dashboard" element={<ClientDashboard />} />
           <Route path="/client-report/:id" element={<ClientReport />} />

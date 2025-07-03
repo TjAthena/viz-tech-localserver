@@ -111,6 +111,8 @@ const Layout = ({ children, userType, currentPage }: LayoutProps) => {
               <h1 className="text-2xl font-semibold text-gray-900">
                 {currentPage === '/admin-dashboard' && 'Admin Dashboard'}
                 {currentPage === '/core-dashboard' && 'Core Dashboard'}
+                {currentPage === '/core-clients' && 'Client Management'}
+                {currentPage === '/core-reports' && 'Report Management'}
                 {currentPage === '/client-dashboard' && 'My Reports'}
                 {currentPage === '/core-profile' && 'Profile Settings'}
                 {!currentPage && 'Dashboard'}
