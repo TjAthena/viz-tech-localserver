@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import AdminUserManagement from "./pages/AdminUserManagement";
 import AdminBilling from "./pages/AdminBilling";
 import AdminAuditLogs from "./pages/AdminAuditLogs";
 import CoreDashboard from "./pages/CoreDashboard";
+import CoreProfile from "./pages/CoreProfile";
 import ClientDashboard from "./pages/ClientDashboard";
 import ClientReport from "./pages/ClientReport";
 import Subscription from "./pages/Subscription";
@@ -34,6 +34,7 @@ const App = () => (
           <Route path="/admin-billing" element={<AdminBilling />} />
           <Route path="/admin-logs" element={<AdminAuditLogs />} />
           <Route path="/core-dashboard" element={<CoreDashboard />} />
+          <Route path="/core-profile" element={<CoreProfile />} />
           <Route path="/client-dashboard" element={<ClientDashboard />} />
           <Route path="/client-report/:id" element={<ClientReport />} />
           <Route path="/subscription" element={<Subscription />} />

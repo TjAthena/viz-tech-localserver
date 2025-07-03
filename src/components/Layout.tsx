@@ -112,6 +112,7 @@ const Layout = ({ children, userType, currentPage }: LayoutProps) => {
                 {currentPage === '/admin-dashboard' && 'Admin Dashboard'}
                 {currentPage === '/core-dashboard' && 'Core Dashboard'}
                 {currentPage === '/client-dashboard' && 'My Reports'}
+                {currentPage === '/core-profile' && 'Profile Settings'}
                 {!currentPage && 'Dashboard'}
               </h1>
             </div>
