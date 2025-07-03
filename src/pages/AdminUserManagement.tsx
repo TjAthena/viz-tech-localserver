@@ -1,6 +1,6 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
+import UserDetailsModal from '@/components/UserDetailsModal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,6 +24,8 @@ const AdminUserManagement = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [roleFilter, setRoleFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [userDetailsOpen, setUserDetailsOpen] = useState(false);
 
   const users = [
     {
@@ -84,6 +86,11 @@ const AdminUserManagement = () => {
     
     return matchesSearch && matchesRole && matchesStatus;
   });
+
+  const handleViewUser = (user: any) => {
+    setSelectedUser(user);
+    setUserDetailsOpen(true);
+  };
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -281,10 +288,15 @@ const AdminUserManagement = () => {
                     <TableCell>{user.lastLogin}</TableCell>
                     <TableCell>
                       <div className="flex space-x-1">
-                        <Button variant="ghost" size="sm">
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={() => handleViewUser(user)}
+                          title="View user details"
+                        >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="sm">
+                        <Button variant="ghost" size="sm" title="Toggle user status">
                           {user.status === 'Active' ? <UserX className="h-4 w-4" /> : <UserCheck className="h-4 w-4" />}
                         </Button>
                       </div>
@@ -295,6 +307,15 @@ const AdminUserManagement = () => {
             </Table>
           </CardContent>
         </Card>
+
+        {/* User Details Modal */}
+        {selectedUser && (
+          <UserDetailsModal
+            open={userDetailsOpen}
+            onOpenChange={setUserDetailsOpen}
+            user={selectedUser}
+          />
+        )}
       </div>
     </Layout>
   );
